@@ -50,13 +50,13 @@ function game() {
     let round = 1;
     while (round<=5) {
         console.log('Round'+' '+round,'Player score is '+playerWin,'Computer score is '+computerWin);
-        let result = playRound(playerSelection=prompt('RPS?'),getComputerChoice());
+        let result = playRound(playerSelection=prompt('Rock, paper, scissors?'),getComputerChoice());
         if (result == 'Player won!') {
             playerWin += 1;
         }   else if (result == 'Player lost!') {
             computerWin += 1;
         }   else {
-            console.log('something strange happened');
+            console.log('You have to pick one!');
         }
         if (playerWin == 3) {
             return 'Player won overall!';
