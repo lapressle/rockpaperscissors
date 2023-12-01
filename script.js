@@ -1,6 +1,5 @@
 function getComputerChoice() {
     let choice = Math.floor(Math.random()*3)
-    console.log(choice);
     switch(choice) {
         case 0:
             return 'Rock';
@@ -15,4 +14,3 @@ function getComputerChoice() {
 }
 
 const computerSelection = getComputerChoice();
-console.log(computerSelection);
