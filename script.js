@@ -13,5 +13,33 @@ function getComputerChoice() {
     }
 }
 
-const playerSelection = 'rock'
+function playRound(playerSelection,computerSelection) {
+    console.log(playerSelection,computerSelection);
+    switch (playerSelection.toLowerCase() + ":" + computerSelection.toLowerCase()) {
+        case 'rock:paper':
+            return 'Player lost!';
+            break;
+        case 'rock:scissors':
+            return 'Player won!';
+            break;
+        case 'paper:rock':
+            return 'Player won!';
+            break;
+        case 'paper:scissors':
+            return 'Player lost!';
+            break;
+        case 'scissors:rock':
+            return 'Player lost!';
+            break;
+        case 'scissors:paper':
+            return 'Player won!';
+            break;
+        default:
+            return 'improper input!';
+    }
+}
+
+const playerSelection = 'rock';
 const computerSelection = getComputerChoice();
+
+console.log(playRound(playerSelection,computerSelection));
