@@ -2,15 +2,16 @@ function getComputerChoice() {
     let choice = Math.floor(Math.random()*3)
     switch(choice) {
         case 0:
-            return 'Rock';
+            return 'rock';
             break;
         case 1:
-            return 'Paper';
+            return 'paper';
             break;
         case 2:
-            return 'Scissors';
+            return 'scissors';
             break;
     }
 }
 
+const playerSelection = 'rock'
 const computerSelection = getComputerChoice();
