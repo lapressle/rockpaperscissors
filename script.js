@@ -34,6 +34,11 @@ function playRound(playerSelection,computerSelection) {
         case 'scissors:paper':
             return 'Player won!';
             break;
+        case 'rock:rock':
+        case 'scissors:scissors':
+        case 'paper:paper':
+            return playRound(playerSelection,getComputerChoice());
+            break;
         default:
             return 'improper input!';
     }
