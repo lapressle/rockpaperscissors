@@ -13,7 +13,7 @@ function getComputerChoice() {
     }
 }
 
-function playRound(playerSelection,computerSelection) {
+function playRound(playerSelection=prompt('RPS?'),computerSelection=getComputerChoice) {
     console.log(playerSelection,computerSelection);
     switch (playerSelection.toLowerCase() + ":" + computerSelection.toLowerCase()) {
         case 'rock:paper':
@@ -44,16 +44,13 @@ function playRound(playerSelection,computerSelection) {
     }
 }
 
-const playerSelection = 'rock';
-let computerSelection = getComputerChoice();
-
 function game() {
     let playerWin = 0;
     let computerWin = 0;
     let round = 1;
-    while (round<5) {
+    while (round<=5) {
         console.log('Round'+' '+round,'Player score is '+playerWin,'Computer score is '+computerWin);
-        let result = playRound(playerSelection,computerSelection);
+        let result = playRound(playerSelection=prompt('RPS?'),getComputerChoice());
         if (result == 'Player won!') {
             playerWin += 1;
         }   else if (result == 'Player lost!') {
@@ -70,7 +67,6 @@ function game() {
             else {
             round +=1;
         }
-        computerSelection = getComputerChoice();
     }
 }
 
