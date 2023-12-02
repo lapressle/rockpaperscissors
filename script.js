@@ -13,7 +13,7 @@ function getComputerChoice() {
     }
 }
 
-function playRound(playerSelection=prompt('RPS?'),computerSelection=getComputerChoice) {
+function playRound(playerSelectiong,computerSelection=GetComputerChoice()) {
     console.log(playerSelection,computerSelection);
     switch (playerSelection.toLowerCase() + ":" + computerSelection.toLowerCase()) {
         case 'rock:paper':
@@ -71,4 +71,20 @@ function game() {
 }
 
 //console.log(game());
+
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+
+rock.addEventListener('click', () => {
+    playRound(playerSelection='rock',getComputerChoice());
+  });
+
+paper.addEventListener('click', () => {
+    playRound(playerSelection='paper',getComputerChoice());
+  });
+
+scissors.addEventListener('click', () => {
+    playRound(playerSelection='scissors',getComputerChoice());
+  });
 
