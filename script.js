@@ -92,11 +92,25 @@ const scissors = document.querySelector('#scissors');
 const gameResults = document.createElement('div')
 const gameStart = document.querySelector('ul')
 
+function whoWon() {
+    if (playerWin > computerWin) {
+        return 'Congrats you won!';
+    }   else {
+        return 'Sorry try again next time!';
+    }
+
+}
+
 rock.addEventListener('click', () => {
     scoreKeeper(playRound(playerSelection='rock',getComputerChoice()));
     let scoreNow = document.createElement('div');
     scoreNow.textContent = ('Round ' + round + ' results: ' +  'Player score is ' + playerWin + ', Computer score is ' + computerWin);
     gameStart.appendChild(scoreNow);
+    if (round == 5) {
+        let winner = document.createElement('div');
+        winner.textContent = whoWon();
+        gameStart.appendChild(winner);
+    }
   });
 
 paper.addEventListener('click', () => {
@@ -104,6 +118,11 @@ paper.addEventListener('click', () => {
     let scoreNow = document.createElement('div');
     scoreNow.textContent = ('Round ' + round + ' results: ' +  'Player score is ' + playerWin + ', Computer score is ' + computerWin);
     gameStart.appendChild(scoreNow);
+    if (round == 5) {
+        let winner = document.createElement('div');
+        winner.textContent = whoWon;
+        gameStart.appendChild(winner);
+    }
   });
 
 scissors.addEventListener('click', () => {
@@ -111,5 +130,10 @@ scissors.addEventListener('click', () => {
     let scoreNow = document.createElement('div');
     scoreNow.textContent = ('Round ' + round + ' results: ' +  'Player score is ' + playerWin + ', Computer score is ' + computerWin);
     gameStart.appendChild(scoreNow);
+    if (round == 5) {
+        let winner = document.createElement('div');
+        winner.textContent = whoWon;
+        gameStart.appendChild(winner);
+    }
   });
 
