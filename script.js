@@ -70,21 +70,46 @@ function game() {
     }
 }
 
-//console.log(game());
+let playerWin = 0;
+let computerWin = 0;
+let round = 0;
+
+function scoreKeeper(result) {
+    if (result == 'Player won!') {
+        playerWin += 1;
+    }   else if (result == 'Player lost!') {
+        computerWin += 1;
+    }   else {
+        console.log('You have to pick one!');
+    }
+        round +=1;
+}
 
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 
+const gameResults = document.createElement('div')
+const gameStart = document.querySelector('ul')
+
 rock.addEventListener('click', () => {
-    playRound(playerSelection='rock',getComputerChoice());
+    scoreKeeper(playRound(playerSelection='rock',getComputerChoice()));
+    let scoreNow = document.createElement('div');
+    scoreNow.textContent = ('Round ' + round + ' results: ' +  'Player score is ' + playerWin + ', Computer score is ' + computerWin);
+    gameStart.appendChild(scoreNow);
   });
 
 paper.addEventListener('click', () => {
-    playRound(playerSelection='paper',getComputerChoice());
+    scoreKeeper(playRound(playerSelection='rock',getComputerChoice()));
+    let scoreNow = document.createElement('div');
+    scoreNow.textContent = ('Round ' + round + ' results: ' +  'Player score is ' + playerWin + ', Computer score is ' + computerWin);
+    gameStart.appendChild(scoreNow);
   });
 
 scissors.addEventListener('click', () => {
-    playRound(playerSelection='scissors',getComputerChoice());
+    scoreKeeper(playRound(playerSelection='rock',getComputerChoice()));
+    let scoreNow = document.createElement('div');
+    scoreNow.textContent = ('Round ' + round + ' results: ' +  'Player score is ' + playerWin + ', Computer score is ' + computerWin);
+    gameStart.appendChild(scoreNow);
   });
 
